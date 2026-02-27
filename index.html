@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HÄMSA · Parfums de luxe</title>
+    <title>LuxuryScents · Parfums de luxe</title>
     <!-- Google Fonts premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (gratuit) -->
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Notre style -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- NAVBAR STICKY avec effet verre (glassmorphism) -->
+    <!-- NAVBAR -->
     <header class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">HÄMSA</a>
+            <a href="#" class="logo">LuxuryScents</a>
             <nav class="nav-menu" id="navMenu">
                 <ul class="nav-list">
                     <li><a href="#home" class="nav-link">Accueil</a></li>
@@ -27,7 +27,6 @@
                     <li><a href="#promo-section" class="nav-link">Promotions</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
-                <!-- icône WhatsApp dans la navbar (desktop) -->
                 <a href="https://wa.me/212600000000" target="_blank" class="nav-wa" id="navWa"><i class="fab fa-whatsapp"></i></a>
             </nav>
             <div class="nav-actions">
@@ -37,7 +36,7 @@
         </div>
     </header>
 
-    <!-- FLOATING BOUTONS (WhatsApp & retour haut) -->
+    <!-- FLOATING BUTTONS -->
     <a href="https://wa.me/212600000000" target="_blank" class="floating-wa" id="floatingWa" title="Contactez-nous WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <button class="back-to-top" id="backToTop" title="Retour en haut"><i class="fas fa-chevron-up"></i></button>
 
@@ -46,17 +45,16 @@
         <section id="home" class="hero">
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <h1 class="hero-title animate-fadeup">Découvrez l’élégance en bouteille</h1>
-                <p class="hero-subtitle animate-fadeup delay-1">Une collection exclusive de parfums d’exception</p>
+                <h1 class="hero-title animate-fadeup">Découvrez l'élégance en bouteille</h1>
+                <p class="hero-subtitle animate-fadeup delay-1">Une collection exclusive de parfums d'exception</p>
                 <a href="#produits" class="btn-hero animate-fadeup delay-2">Voir la collection <i class="fas fa-arrow-right"></i></a>
             </div>
         </section>
 
-        <!-- SECTION PRODUITS avec filtres et recherche -->
+        <!-- PRODUITS -->
         <section id="produits" class="products-section">
             <div class="container">
-                <h2 class="section-title">Nos parfums d’exception</h2>
-                <!-- barre de recherche + filtres -->
+                <h2 class="section-title">Nos parfums d'exception</h2>
                 <div class="product-toolbar">
                     <div class="search-wrapper">
                         <i class="fas fa-search search-icon"></i>
@@ -68,11 +66,7 @@
                         <button class="filter-btn" data-filter="femme">Femme</button>
                     </div>
                 </div>
-
-                <!-- grille des produits (injectée par JS) -->
                 <div class="products-grid" id="productsGrid"></div>
-
-                <!-- petit compteur promo (simulé : promotion flash) -->
                 <div class="flash-promo" id="promoCountdown">
                     <span class="promo-label"><i class="fas fa-clock"></i> Offre flash : fin dans</span>
                     <span class="countdown-timer" id="countdownTimer">24:00:00</span>
@@ -80,7 +74,7 @@
             </div>
         </section>
 
-        <!-- SECTION POURQUOI NOUS CHOISIR -->
+        <!-- POURQUOI NOUS CHOISIR -->
         <section class="why-us">
             <div class="container">
                 <h2 class="section-title">Pourquoi nous choisir</h2>
@@ -109,7 +103,7 @@
             </div>
         </section>
 
-        <!-- SECTION TÉMOIGNAGES -->
+        <!-- TÉMOIGNAGES -->
         <section class="testimonials">
             <div class="container">
                 <h2 class="section-title">Ils nous font confiance</h2>
@@ -133,7 +127,7 @@
             </div>
         </section>
 
-        <!-- BANDEAU PROMOTION SPÉCIALE -->
+        <!-- BANDEAU PROMO -->
         <section id="promo-section" class="special-promo">
             <div class="promo-banner">
                 <div class="promo-content">
@@ -144,7 +138,7 @@
             </div>
         </section>
 
-        <!-- FOOTER -->
+        <!-- FOOTER avec bouton admin -->
         <footer id="contact" class="footer">
             <div class="container">
                 <div class="footer-grid">
@@ -156,6 +150,8 @@
                             <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                             <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         </div>
+                        <!-- Bouton administration -->
+                        <button id="adminLoginBtn" class="admin-btn"><i class="fas fa-lock"></i> Administration</button>
                     </div>
                     <div class="footer-col">
                         <h4>Contact</h4>
@@ -175,13 +171,80 @@
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <p>&copy; 2026 LuxuryScents. Tous droits réservés. Design luxe.</p>
+                    <p>&copy; 2026 LuxuryScents. Tous droits réservés.</p>
                 </div>
             </div>
         </footer>
     </main>
 
-    <!-- Notre script -->
+    <!-- MODALE DE CONNEXION ADMIN -->
+    <div id="adminModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Connexion administration</h3>
+            <input type="password" id="adminPassword" placeholder="Mot de passe">
+            <button id="submitAdminLogin">Se connecter</button>
+            <p class="error-message" id="loginError"></p>
+        </div>
+    </div>
+
+    <!-- PANNEAU D'ADMINISTRATION -->
+    <div id="adminPanel" class="admin-panel" style="display: none;">
+        <div class="admin-header">
+            <h2>Gestion des produits</h2>
+            <button id="closeAdminPanel"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="admin-toolbar">
+            <button id="addProductBtn"><i class="fas fa-plus"></i> Nouveau produit</button>
+            <button id="resetProductsBtn"><i class="fas fa-undo"></i> Réinitialiser</button>
+        </div>
+        <div id="adminProductList" class="admin-product-list"></div>
+
+        <!-- Formulaire d'ajout/édition -->
+        <div id="productFormContainer" style="display: none;">
+            <h3 id="formTitle">Ajouter un produit</h3>
+            <form id="productForm">
+                <input type="hidden" id="productId">
+                <div class="form-group">
+                    <label>Nom :</label>
+                    <input type="text" id="productName" required>
+                </div>
+                <div class="form-group">
+                    <label>Description :</label>
+                    <textarea id="productDesc" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Prix (DH) :</label>
+                    <input type="number" id="productPrice" required>
+                </div>
+                <div class="form-group">
+                    <label>Catégorie :</label>
+                    <select id="productCategory">
+                        <option value="homme">Homme</option>
+                        <option value="femme">Femme</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Promotion :</label>
+                    <input type="checkbox" id="productPromo"> En promotion
+                </div>
+                <div class="form-group">
+                    <label>Image du produit :</label>
+                    <input type="file" id="productImageFile" accept="image/*" class="form-control">
+                    <div id="imagePreviewContainer" style="margin-top: 10px;">
+                        <img id="imagePreview" src="#" alt="Aperçu" style="max-width: 100%; max-height: 150px; display: none; border-radius: 8px;">
+                    </div>
+                    <small>Formats acceptés : JPG, PNG, WEBP (max 2 Mo)</small>
+                    <input type="hidden" id="productImageData" value="">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" id="saveProductBtn">Enregistrer</button>
+                    <button type="button" id="cancelFormBtn">Annuler</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "name": "Sauvage",
+        "desc": "Frais et puissant, l'icône Dior",
+        "price": 950,
+        "category": "homme",
+        "promo": false,
+        "image": "images/sauvage.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Chanel N°5",
+        "desc": "L'élégance intemporelle",
+        "price": 1200,
+        "category": "femme",
+        "promo": true,
+        "image": "images/chanel5.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Creed Aventus",
+        "desc": "Fumé, noble, puissant",
+        "price": 1800,
+        "category": "homme",
+        "promo": false,
+        "image": "images/aventus.jpg"
+    },
+    {
+        "id": 4,
+        "name": "La Vie Est Belle",
+        "desc": "Gourmand et solaire",
+        "price": 1100,
+        "category": "femme",
+        "promo": true,
+        "image": "images/lavieestbelle.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Black Opium",
+        "desc": "Café & fleur d'oranger",
+        "price": 1050,
+        "category": "femme",
+        "promo": false,
+        "image": "images/blackopium.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Acqua di Giò",
+        "desc": "Marin et frais, l'été en flacon",
+        "price": 900,
+        "category": "homme",
+        "promo": false,
+        "image": "images/acquadigio.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Oud Wood",
+        "desc": "Boisé, rare, sensuel",
+        "price": 1600,
+        "category": "homme",
+        "promo": true,
+        "image": "images/oudwood.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Baccarat Rouge 540",
+        "desc": "Ambre & jasmin, légendaire",
+        "price": 2000,
+        "category": "femme",
+        "promo": false,
+        "image": "images/baccarat.jpg"
+    }
+]
