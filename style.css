@@ -2,7 +2,7 @@
 :root {
     --deep-black: #0a0a0a;
     --beige-light: #f8f5f0;
-    --gold: #c9a959;
+    --gold: #0B4F2A;
     --gold-hover: #b8943c;
     --white: #ffffff;
     --gray-light: #eae7e0;
@@ -167,13 +167,38 @@ body.dark .testimonial-card {
 .hero {
     height: 90vh;
     min-height: 600px;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('assets/images/WhatsApp\ Image\ 2026-02-27\ at\ 21.07.11.jpeg') center/cover fixed;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('assets/images/WhatsApp\ Image\ 2026-02-27\ at\ 21.07.11.jpeg') center/cover scroll;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
     position: relative;
+}
+
+/* Mobile hero adjustments */
+@media (max-width: 768px) {
+    .hero {
+        height: 100vh;
+        min-height: 500px;
+        background-attachment: scroll;
+        background-position: center;
+        background-size: cover;
+    }
+    .hero-content {
+        padding: 1rem;
+    }
+    .hero-title {
+        font-size: clamp(2rem, 6vw, 3rem);
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    .btn-hero {
+        padding: 0.8rem 2rem;
+        font-size: 0.9rem;
+    }
 }
 .hero-content {
     max-width: 800px;
