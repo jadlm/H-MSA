@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HÄMSA · Parfums de luxe</title>
+    <!-- Google Fonts premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (gratuit) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Notre style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- NAVBAR STICKY avec effet verre (glassmorphism) -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">HÄMSA</a>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link">Accueil</a></li>
+                    <li><a href="#produits" class="nav-link">Boutique</a></li>
+                    <li><a href="#homme" class="nav-link" data-filter="homme">Homme</a></li>
+                    <li><a href="#femme" class="nav-link" data-filter="femme">Femme</a></li>
+                    <li><a href="#promo-section" class="nav-link">Promotions</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <!-- icône WhatsApp dans la navbar (desktop) -->
+                <a href="https://wa.me/212600000000" target="_blank" class="nav-wa" id="navWa"><i class="fab fa-whatsapp"></i></a>
+            </nav>
+            <div class="nav-actions">
+                <button class="dark-toggle" id="darkToggle" aria-label="Mode sombre"><i class="fas fa-moon"></i></button>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- FLOATING BOUTONS (WhatsApp & retour haut) -->
+    <a href="https://wa.me/212600000000" target="_blank" class="floating-wa" id="floatingWa" title="Contactez-nous WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <button class="back-to-top" id="backToTop" title="Retour en haut"><i class="fas fa-chevron-up"></i></button>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title animate-fadeup">Découvrez l’élégance en bouteille</h1>
+                <p class="hero-subtitle animate-fadeup delay-1">Une collection exclusive de parfums d’exception</p>
+                <a href="#produits" class="btn-hero animate-fadeup delay-2">Voir la collection <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <!-- SECTION PRODUITS avec filtres et recherche -->
+        <section id="produits" class="products-section">
+            <div class="container">
+                <h2 class="section-title">Nos parfums d’exception</h2>
+                <!-- barre de recherche + filtres -->
+                <div class="product-toolbar">
+                    <div class="search-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="searchInput" placeholder="Rechercher un parfum..." class="search-input">
+                    </div>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">Tous</button>
+                        <button class="filter-btn" data-filter="homme">Homme</button>
+                        <button class="filter-btn" data-filter="femme">Femme</button>
+                    </div>
+                </div>
+
+                <!-- grille des produits (injectée par JS) -->
+                <div class="products-grid" id="productsGrid"></div>
+
+                <!-- petit compteur promo (simulé : promotion flash) -->
+                <div class="flash-promo" id="promoCountdown">
+                    <span class="promo-label"><i class="fas fa-clock"></i> Offre flash : fin dans</span>
+                    <span class="countdown-timer" id="countdownTimer">24:00:00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION POURQUOI NOUS CHOISIR -->
+        <section class="why-us">
+            <div class="container">
+                <h2 class="section-title">Pourquoi nous choisir</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-truck feature-icon"></i>
+                        <h3>Livraison rapide</h3>
+                        <p>Sous 24h à domicile ou point relais</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-gem feature-icon"></i>
+                        <h3>Produits originaux</h3>
+                        <p>100% authentiques, coffret scellé</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-hand-holding-usd feature-icon"></i>
+                        <h3>Paiement à la livraison</h3>
+                        <p>Payez quand vous recevez</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-headset feature-icon"></i>
+                        <h3>Support 7j/7</h3>
+                        <p>Une équipe à votre écoute</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION TÉMOIGNAGES -->
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">Ils nous font confiance</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="testimonial-text">"Emballage luxueux, senteur divine. Livraison ultra rapide. Je recommande."</p>
+                        <div class="client-name">— Claire D.</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="testimonial-text">"Le Sauvage est authentique, prix compétitif. Le service WhatsApp est très pratique."</p>
+                        <div class="client-name">— Mehdi K.</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                        <p class="testimonial-text">"Première commande, parfait. Le comptoir m'a bien conseillé. Merci !"</p>
+                        <div class="client-name">— Samira L.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BANDEAU PROMOTION SPÉCIALE -->
+        <section id="promo-section" class="special-promo">
+            <div class="promo-banner">
+                <div class="promo-content">
+                    <span class="promo-badge">-50 DH</span>
+                    <h3>Toute la collection <span class="gold-text">à -50DH</span></h3>
+                    <p>Sur sélection de parfums, profitez-en maintenant.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer id="contact" class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h4>LuxuryScents</h4>
+                        <p>L'élégance liquide depuis 2020. Parfums de niche et grandes maisons.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 12, Rue des Parfums, Casablanca</p>
+                        <p><i class="fas fa-phone-alt"></i> +212 600 000 000</p>
+                        <p><i class="fab fa-whatsapp"></i> +212 600 000 000</p>
+                        <p><i class="fas fa-envelope"></i> contact@luxuryscents.ma</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Informations</h4>
+                        <ul>
+                            <li><a href="#">Livraison & retours</a></li>
+                            <li><a href="#">Mentions légales</a></li>
+                            <li><a href="#">Politique de confidentialité</a></li>
+                            <li><a href="#">CGV</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 LuxuryScents. Tous droits réservés. Design luxe.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Notre script -->
+    <script src="script.js"></script>
+</body>
+</html>
