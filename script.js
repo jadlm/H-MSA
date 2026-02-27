@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const name = btn.dataset.name;
                 const price = btn.dataset.price;
                 const message = `Bonjour, je souhaite commander le parfum *${name}* au prix de ${price} DH.`;
-                const url = `https://wa.me/212600000000?text=${encodeURIComponent(message)}`; // Changez le numéro
+                const url = `https://wa.me/212637154240?text=${encodeURIComponent(message)}`;
                 window.open(url, '_blank');
             });
         });
